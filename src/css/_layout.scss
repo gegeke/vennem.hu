@@ -1,0 +1,37 @@
+@import "./bootstrap/bootstrap/_variables.scss";
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.link{
+    &:hover{
+        color:#2965cc;
+    }
+    &:visited{
+        color:#663299;
+    }
+}
+
+.site-contet{
+    flex: 1;
+}
+
+/* Base Layout */
+.res-test {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: #fff;
+  font-weight: 500;
+  z-index: 99999; }
+
+.high-pixel-density {
+  display: none;
+  }
