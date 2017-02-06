@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'vennem';
+  src:  url('./font/vennem.eot?vaahpc');
+  src:  url('./font/vennem.eot?vaahpc#iefix') format('embedded-opentype'),
+    url('./font/vennem.ttf?vaahpc') format('truetype'),
+    url('./font/vennem.woff?vaahpc') format('woff'),
+    url('./font/vennem.svg?vaahpc#vennem') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.vennem-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'vennem' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: middle;
+  line-height: 1.2em;
+  font-size: 1.2em;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vi-all-categories:before {
+  content: "\e900";
+}
+.vi-arrow-alphabet-asc:before {
+  content: "\e901";
+}
+.vi-arrow-popular:before {
+  content: "\e902";
+}
+.vi-arrow-price-asc:before {
+  content: "\e903";
+}
+.vi-arrow-price-desc:before {
+  content: "\e904";
+}
+.vi-arrow-right:before {
+  content: "\e905";
+}
+.vi-desktop-view:before {
+  content: "\e906";
+}
+.vi-list-order:before {
+  content: "\e907";
+}
+.vi-list-view:before {
+  content: "\e908";
+}
+.vi-search:before {
+  content: "\e909";
+}
+.vi-search-clear:before {
+  content: "\e90a";
+}
+.vi-thumbnail-view:before {
+  content: "\e90b";
+}
