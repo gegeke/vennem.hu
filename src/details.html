@@ -22,34 +22,33 @@
     <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
 
     <link href="./css/bundle.css" rel="stylesheet" />
-
 </head>
 
 <body>
     <header class="main-header">
         <div class="container">
             <div class="row">
-                <div class="col-xs-5">
+                <div class="col-xs-5 col-sm-2">
                     <img class="logo img-responsive" src="./img/vennem-logo.svg">
                 </div>
-                <div class="col-xs-7">
+                <div class="col-xs-7 visible-xs">
                     <h1 class="header-slogan">
                         Segítünk aligazodni több mint <b class="brand-color">22.000</b> háztartási cukk között
                     </h1>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-10">
                     <form action="">
                         <div class="input-group">
                             <span class="input-group-addon btn-default">
                                 <i class="vennem-icon vi-all-categories"></i>
                             </span>
-                            <input type="text" class="form-control">
+                            <input id="search-field" type="text" class="form-control">
                             <span class="input-group-addon btn-primary">
                                 <i class="vennem-icon vi-search"></i>
                             </span>
@@ -60,53 +59,183 @@
         </div>
     </header>
     <main class="site-contet">
-       <section class="details-section">
-           <div class="container">
-               <div class="row">
+        <section class="details-section">
+            <div class="container">
+                <div class="row hidden-xs">
+                    <div class="col-xs-12">
+                        <div class="category-header">
+                            <ul class="breadcrumb-list hidden-xs">
+                                <li>Itt jár:</li>
+                                <li><a href="#">Összes termék kategóriák  <i class="vennem-icon vi-arrow-right"></i></a></li>
+                                <li><a href="#">Kekszek és italok  <i class="vennem-icon vi-arrow-right"></i></a></li>
+                                <li><a href="#">Kekszek  <i class="vennem-icon vi-arrow-right"></i></a></li>
+                                <li>Abonett búzacsírás extrudált kenyér 100g</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-xs-12">
                         <div class="product-details-container">
-                            <div class="pd-image">
-                                <img src="http://placehold.it/140x140">
+                            <div class="pd-header visible-xs">
+                                <div class="pd-image">
+                                    <div id="details-carousel" class="carousel slide" data-ride="carousel">
+                                        <!--<ol class="carousel-indicators">
+                                            <li data-target="#details-carousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#details-carousel" data-slide-to="1"></li>
+                                            <li data-target="#details-carousel" data-slide-to="2"></li>
+                                        </ol>-->
+                                        <div class="carousel-inner" role="listbox">
+                                            <div class="item active">
+                                                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1st-PIC&w=140&h=140" alt="...">
+                                            </div>
+                                            <div class="item">
+                                                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=2nd-PIC&w=140&h=140" alt="...">
+                                            </div>
+                                            <div class="item">
+                                                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=3rd-PIC&w=140&h=140" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <!--<ul id="details-gallery">
+                                        <li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1st-image&w=140&h=140" alt="..."></li>
+                                        <li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=2nd-image&w=140&h=140" alt="..."></li>
+                                        <li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=3rd-image&w=140&h=140" alt="..."></li>
+                                    </ul>-->
+                                </div>
+                                <h1 class="pd-title">
+                                    Abonett búzacsírás extrudált kenyér 100g
+                                </h1>
                             </div>
-                            <h1 class="pd-title">
-                                Abonett búzacsírás extrudált kenyér 100g
-                            </h1>
+                            <div class="pd-header hidden-xs">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="pd-image">
+                                            <img src="http://placehold.it/140x140">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h1 class="pd-big-title">Abonett búzacsírás extrudált kenyér 100g</h1>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="pd-item-desctiption">
+                                                    <label class="sale-info">Tesco Akció</label>
+                                                    <span class="item-old-price">250 Ft</span>
+                                                    <h4 class="item-price">219 Ft-tól</h4>
+                                                    <span class="item-offers">(1 ajánlat)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h3 class="pd-offers-title">Legjobb ajánlatok</h3>
+                                                <ul class="pd-best-offers-list">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span class="store-name">1. Tesco</span> <span class="store-price">219 Ft</span> <span class="store-date">2017.01.25</span>
+                                                            <i class="vennem-icon vi-arrow-right"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span class="store-name">2. Auchan</span> <span class="store-price">219 Ft</span> <span class="store-date">2017.01.25</span>
+                                                            <i class="vennem-icon vi-arrow-right"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span class="store-name">3. Lidl</span> <span class="store-price">219 Ft</span> <span class="store-date">2017.01.25</span>
+                                                            <i class="vennem-icon vi-arrow-right"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="theme-link">
+                                                            Összes ajánlat
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-header hidden-xs">
+                                <h2 class="details-title">Boltok és árak</h2>
+                            </div>
                             <ul class="store-list">
                                 <li>
-                                    <img src="http://placehold.it/60x20">
-                                    <span>2017.01.23</span>
-                                    <h2 class="pd-price">219 Ft</h2>
-                                    <i class="vennem-icon vi-arrow-right"></i>
+                                    <a href="#">
+                                        <img src="http://placehold.it/60x20">
+                                        <span class="pd-name hidden-xs">Abonett búzacsírás extrudált kenyér 100g</span>
+                                        <span class="visible-xs">2017.01.23</span>
+                                        <div class="dt-price-container">
+                                            <div class="sale-info">
+                                                <span class="brand-color">Akció:</span>
+                                                <span class="old-price">259Ft</span>
+                                            </div>
+                                            <h4 class="dt-price">219 Ft</h4>
+                                        </div>
+                                        <i class="vennem-icon vi-arrow-right visible-xs"></i>
+                                        <button class="btn btn-primary hidden-xs">Irány a bolt <i class="vennem-icon vi-arrow-right"></i> </button>
+                                    </a>
                                 </li>
                                 <li>
-                                    <img src="http://placehold.it/60x20">
-                                    <span>2017.01.23</span>
-                                    <h2 class="pd-price">219 Ft</h2>
-                                    <i class="vennem-icon vi-arrow-right"></i>
+                                    <a href="#">
+                                        <img src="http://placehold.it/60x20">
+                                        <span class="pd-name hidden-xs">Abonett búzacsírás extrudált kenyér 100g</span>
+                                        <span class="visible-xs">2017.01.23</span>
+                                        <div class="dt-price-container">
+                                            <h4 class="dt-price">219 Ft</h4>
+                                        </div>
+                                        <i class="vennem-icon vi-arrow-right visible-xs"></i>
+                                        <button class="btn btn-primary hidden-xs">Irány a bolt <i class="vennem-icon vi-arrow-right"></i> </button>
+                                    </a>
                                 </li>
                                 <li>
-                                    <img src="http://placehold.it/60x20">
-                                    <span>2017.01.23</span>
-                                    <h2 class="pd-price">219 Ft</h2>
-                                    <i class="vennem-icon vi-arrow-right"></i>
+                                    <a href="#">
+                                        <img src="http://placehold.it/60x20">
+                                        <span class="pd-name hidden-xs">Abonett búzacsírás extrudált kenyér 100g</span>
+                                        <span class="visible-xs">2017.01.23</span>
+                                        <div class="dt-price-container">
+                                            <h4 class="dt-price">219 Ft</h4>
+                                        </div>
+                                        <i class="vennem-icon vi-arrow-right visible-xs"></i>
+                                        <button class="btn btn-primary hidden-xs">Irány a bolt <i class="vennem-icon vi-arrow-right"></i> </button>
+                                    </a>
                                 </li>
                                 <li>
-                                    <img src="http://placehold.it/60x20">
-                                    <span>2017.01.23</span>
-                                    <h2 class="pd-price">219 Ft</h2>
-                                    <i class="vennem-icon vi-arrow-right"></i>
+                                    <a href="#">
+                                        <img src="http://placehold.it/60x20">
+                                        <span class="pd-name hidden-xs">Abonett búzacsírás extrudált kenyér 100g</span>
+                                        <span class="visible-xs">2017.01.23</span>
+                                        <div class="dt-price-container">
+                                            <h4 class="dt-price">219 Ft</h4>
+                                        </div>
+                                        <i class="vennem-icon vi-arrow-right visible-xs"></i>
+                                        <button class="btn btn-primary hidden-xs">Irány a bolt <i class="vennem-icon vi-arrow-right"></i> </button>
+                                    </a>
                                 </li>
                                 <li>
-                                    <img src="http://placehold.it/60x20">
-                                    <span>2017.01.23</span>
-                                    <h2 class="pd-price">219 Ft</h2>
-                                    <i class="vennem-icon vi-arrow-right"></i>
+                                    <a href="#">
+                                        <img src="http://placehold.it/60x20">
+                                        <span class="pd-name hidden-xs">Abonett búzacsírás extrudált kenyér 100g</span>
+                                        <span class="visible-xs">2017.01.23</span>
+                                        <div class="dt-price-container">
+                                            <h4 class="dt-price">219 Ft</h4>
+                                        </div>
+                                        <i class="vennem-icon vi-arrow-right visible-xs"></i>
+                                        <button class="btn btn-primary hidden-xs">Irány a bolt <i class="vennem-icon vi-arrow-right"></i> </button>
+                                    </a>
                                 </li>
                             </ul>
+
+                            <div class="details-header hidden-xs">
+                                <h2 class="details-title">Termékleírás</h2>
+                            </div>
                             <div class="pd-info-container">
                                 <h3 class="pd-info-title">Termék információk</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam.
                                 </p>
                                 <table>
                                     <thead>
@@ -114,6 +243,7 @@
                                             <th>Termék információk</th>
                                             <th>100g</th>
                                             <th>1 szelet 4,8g</th>
+                                            <th style="width: 20%" class="hidden-xs"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -121,52 +251,43 @@
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Energia (kJ)</td>
-                                            <td>1507</td>
-                                            <td>723</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Energia (kJ)</td>
                                             <td>1507</td>
                                             <td>723</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Energia (kJ)</td>
-                                            <td>1507</td>
-                                            <td>723</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Energia (kJ)</td>
-                                            <td>1507</td>
-                                            <td>723</td>
+                                            <td></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -181,27 +302,33 @@
                             </div>
                         </div>
                     </div>
-               </div>
-           </div>
-       </section>
-       <section class="result-section">
+                </div>
+            </div>
+        </section>
+        <section class="result-section">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                       <div class="product-slider-container">
-                           <h1 class="ps-title">
-                               Akciós termékek
-                           </h1>
-                           <ul class="product-slider-list">
+                        <div class="product-slider-container">
+                            <h1 class="ps-title">
+                                Akciós termékek
+                            </h1>
+                            <ul id="popular-sale" class="product-slider-list">
                                 <li>
-                                    <a href="">
-                                        <div class="sale-label">
-                                            10%
-                                        </div>
-                                        <img src="http://placehold.it/65x65"/>
+                                    <a href="#">
+                                        <img src="http://placehold.it/65x65" />
                                         <div class="ps-item-desctiption">
                                             <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
-                                            <h3 class="sale-info">Tesco Akció</h3>
+                                            <h4 class="item-price">219 Ft-tól</h4>
+                                            <span class="item-offers">(1 ajánlat)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="http://placehold.it/65x65" />
+                                        <div class="ps-item-desctiption">
+                                            <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
                                             <h4 class="item-price">219 Ft-tól</h4>
                                             <span class="item-offers">(1 ajánlat)</span>
                                         </div>
@@ -209,20 +336,66 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <div class="sale-label">
-                                            10%
-                                        </div>
-                                        <img src="http://placehold.it/65x65"/>
+                                        <img src="http://placehold.it/65x65" />
                                         <div class="ps-item-desctiption">
                                             <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
-                                            <h3 class="sale-info">Tesco Akció</h3>
                                             <h4 class="item-price">219 Ft-tól</h4>
                                             <span class="item-offers">(1 ajánlat)</span>
                                         </div>
                                     </a>
                                 </li>
-                           </ul>
-                       </div>
+                                <li>
+                                    <a href="">
+                                        <img src="http://placehold.it/65x65" />
+                                        <div class="ps-item-desctiption">
+                                            <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                            <h4 class="item-price">219 Ft-tól</h4>
+                                            <span class="item-offers">(1 ajánlat)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://placehold.it/65x65" />
+                                        <div class="ps-item-desctiption">
+                                            <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                            <h4 class="item-price">219 Ft-tól</h4>
+                                            <span class="item-offers">(1 ajánlat)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://placehold.it/65x65" />
+                                        <div class="ps-item-desctiption">
+                                            <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                            <h4 class="item-price">219 Ft-tól</h4>
+                                            <span class="item-offers">(1 ajánlat)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://placehold.it/65x65" />
+                                        <div class="ps-item-desctiption">
+                                            <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                            <h4 class="item-price">219 Ft-tól</h4>
+                                            <span class="item-offers">(1 ajánlat)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="http://placehold.it/65x65" />
+                                        <div class="ps-item-desctiption">
+                                            <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                            <h4 class="item-price">219 Ft-tól</h4>
+                                            <span class="item-offers">(1 ajánlat)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,8 +411,8 @@
                     </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua.
                     </p>
                     <a class="footer-more-info" href="#">A termékadatokról bővebben...</a>
                 </div>
@@ -284,7 +457,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!--Page specific Vendor scripts-->
-    <script src="../node_modules/bootstrap-carousel-swipe/carousel-swipe.js"></script>
+    <!--<script src="../node_modules/bootstrap-carousel-swipe/carousel-swipe.js"></script>-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
     <!--Page specific scripts-->
     <script src="/js/app.js"></script>

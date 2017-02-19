@@ -9,6 +9,11 @@ body{
     line-height: 16px;
 }
 
+.container{
+    max-width: 740px;
+    min-width: 325px;
+}
+
 .link{
     &:hover{
         color:#2965cc;
@@ -34,4 +39,4 @@ body{
 
 .high-pixel-density {
   display: none;
-  }
+}
