@@ -55,7 +55,16 @@ $screen-md-max: ($screen-lg-min - 1) !default;
         display: none;
     }
     /*Real content CSS*/
-   
+    .main-header{
+        .logo-container{
+            .logo{
+                margin: 0 $common-gap $common-gap 0;
+            }
+        }
+        .header-slogan{
+            display: inline-block;
+        }
+    }
 }
 
 /* Small devices (tablets, 768px and up) */

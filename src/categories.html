@@ -32,27 +32,22 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <div class="row hidden-sm">
-                <div class="col-xs-5">
+            <div class="row">
+                <div class="col-xs-5 col-sm-2">
                     <img class="logo img-responsive" src="./img/vennem-logo.svg">
                 </div>
-                <div class="col-xs-7">
+                <div class="col-xs-7 visible-xs">
                     <h1 class="header-slogan">
                         Segítünk aligazodni több mint <b class="brand-color">22.000</b> háztartási cukk között
                     </h1>
                 </div>
-            </div>
-            <div class="row">
-                <div class="hidden-xs col-sm-3">
-                    <img class="logo img-responsive" src="./img/vennem-logo.svg">
-                </div>
-                <div class="col-xs-12 col-sm-9">
+                <div class="col-xs-12 col-sm-10">
                     <form action="">
                         <div class="input-group">
                             <span class="input-group-addon btn-default">
                                 <i class="vennem-icon vi-all-categories"></i>
                             </span>
-                            <input type="text" class="form-control">
+                            <input id="search-field" type="text" class="form-control">
                             <span class="input-group-addon btn-primary">
                                 <i class="vennem-icon vi-search"></i>
                             </span>
@@ -64,13 +59,20 @@
     </header>
     <main class="site-contet">
         <section class="category-section">
-            <h1 class="category-header">
-                <span class="hidden-xs">Itt jár:</span> Összes termék kategóriák
-            </h1>
             <div class="container">
                 <div class="row">
+                    <div class="col-xs-12">
+                        <div class="category-header">
+                            <ul class="breadcrumb-list hidden-xs">
+                                <li>Itt jár:</li>
+                                <li>Összes termék kategóriák</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-xs-12 col-sm-6">
-                        <div class="category-block-container">
+                        <div class="category-block-container item-left">
                             <h2 class="cb-title">
                                 Kekszek és italok
                             </h2>
@@ -112,11 +114,11 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="hidden-xs" href="">Még több kategória</a>
+                            <a class="hidden-xs theme-link" href="">Még több kategória</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <div class="category-block-container">
+                        <div class="category-block-container item-right">
                             <h2 class="cb-title">
                                 Kekszek és italok
                             </h2>
@@ -158,11 +160,11 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="hidden-xs" href="">Még több kategória</a>
+                            <a class="hidden-xs theme-link" href="">Még több kategória</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <div class="category-block-container">
+                        <div class="category-block-container item-left">
                             <h2 class="cb-title">
                                 Kekszek és italok
                             </h2>
@@ -204,11 +206,11 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="hidden-xs" href="">Még több kategória</a>
+                            <a class="hidden-xs theme-link" href="">Még több kategória</a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <div class="category-block-container">
+                        <div class="category-block-container item-right">
                             <h2 class="cb-title">
                                 Kekszek és italok
                             </h2>
@@ -250,7 +252,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="hidden-xs" href="">Még több kategória</a>
+                            <a class="hidden-xs theme-link" href="">Még több kategória</a>
                         </div>
                     </div>
                 </div>
