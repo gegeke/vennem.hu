@@ -1,0 +1,59 @@
+//Slick for home @page
+.slick-arrow{
+	width: 50px;
+	background-color: #fff;
+	margin: 0 2px;
+	height: calc(100% - 2px);
+	margin-top:-1px;
+	&.slick-prev{
+		left: -52px;
+		margin-left: 0;
+		&:before{
+			color:$gray-darker;
+		}
+		&.slick-disabled{
+			background-color: $gray-lighter;
+			cursor: initial;
+		}
+		&:hover{
+			background-color: #fff;
+		}
+	}
+	&.slick-next{
+		right: -52px;
+		width: 50px;
+		margin-right: 0;
+		&:before{
+			color:$gray-darker;
+		}
+		&.slick-disabled{
+			background-color: $gray-lighter;
+			cursor: initial;
+		}
+		&:hover{
+			background-color: #fff;
+		}
+	}
+}
+
+//Autocomplete
+
+.autocomplete-suggestions{
+	margin: 5px 0 0 0;
+	background-color: #fff;
+	border-radius:$border-radius-base;
+	@include box-shadow($common-box-shadow);
+	.autocomplete-group{}
+	.autocomplete-suggestion{
+		color:$gray-darker;
+		padding:10px $common-gap;
+		.autocomplete-selected{}
+		strong{
+			color:$text-color;
+		}
+		&:hover{
+			background-color: #fefddb;
+			color:$link-color;
+		}
+	}
+}
