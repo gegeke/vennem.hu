@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Vennem.hu</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+        <link href="./css/bundle.css" rel="stylesheet" />
+<style>
+.media {
+	margin-top: 0;
+}
+
+.media-left {
+	padding-right: 15px;
+}
+
+.result-list {}
+
+.result-list > li > a {
+	padding: 15px;
+}
+
+.result-list li a div h2 {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.result-list > li > a div.media > .media-body {
+	line-height: 16px;
+	padding-right: 30px;
+}
+
+.result-list > li > a div.media > .media-left > .media-object {
+	width: 65px;
+	height: 65px;
+}
+
+.result-list li .sale-label {
+	font-size: 18px;
+}
+
+.result-list > li > a .sale-info,
+.result-list > li.sale-item > a .item-price {
+	color: #ff7d26;
+}
+
+.result-list > li > a .sale-info {
+	font-size: 12px;
+}
+
+.result-list > li > a .item-price {
+	color: #000000;
+	font-size: 18px;
+	font-weight: 700;
+	display: inline;
+}
+
+.result-list > li > a .item-offers {
+	font-size: 12px;
+	color: #707070;
+}
+
+@media ( min-width: 768px ) {
+
+.media-left {
+	padding-right: 40px;
+}
+
+.result-list {}
+
+.result-list > li > a {
+	padding: 15px 15px 15px 40px;
+}
+
+.result-list li a div h2 {
+	font-size: 18px;
+}
+
+.result-list > li > a div.media > .media-body {
+	line-height: 22px;
+}
+
+.result-list > li > a .sale-info {
+	font-size: 14px;
+}
+
+.result-list > li > a .item-price {
+	font-size: 22px;
+}
+
+.result-list > li > a .item-offers {
+	font-size: 14px;
+}
+
+.result-list li .sale-label {
+	font-size: 22px;
+}
+
+.result-list > li > a .vi-arrow-right {
+	font-size: 21px;
+/* 	align-self: center; */
+}
+
+.result-list > li > a div.media > .media-left > .media-object {
+	width: 120px;
+	height: 120px;
+}
+
+}
+
+
+.breadcrumb-list li a:visited,
+.result-list li a:visited div h2 {
+	color: #663299;
+}
+
+/* just a little hack for correct behavior */
+.result-list li a:hover {
+	color: #000000;
+}
+
+.breadcrumb-list li a:hover,
+.result-list li a:hover div h2 {
+	color: #2965cc;
+}
+
+.main-header {
+	padding: 0;
+}
+
+.header-container-wrapper {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.header-container-wrapper.white {
+	background-color: #ffffff;
+}
+
+.header-container-wrapper.gray {
+	background-color: #f2f2f2;
+}
+
+.header-container-wrapper.bottom {
+	-webkit-box-shadow: 0 2px 3px 1px rgba( 0, 0, 0, 0.1 );
+	        box-shadow: 0 2px 3px 1px rgba( 0, 0, 0, 0.1 );
+	margin-bottom: 15px;
+}
+
+.category-header {
+	margin-bottom: 0;
+	padding: 0;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+}
+
+.category-header .filter-container {
+	padding-bottom: 0;
+}
+
+.category-header h1 {
+	padding-top: 0;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media ( min-width: 768px ) {
+
+	#search-field {
+		height: 45px;
+	}
+
+	.main-header .input-group-addon:first-child,
+	.main-header .input-group-addon:last-child {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.main-header .input-group-addon:first-child i,
+	.main-header .input-group-addon:last-child i {
+		display: inline-block;
+		width: 60px;
+	}
+
+	.category-header h1 {
+		padding-top: 15px;
+	}
+
+}
+</style>
+</head>
+
+<body>
+    <header class="main-header">
+<!--         <div class="container"> -->
+			<div class="header-container-wrapper gray">
+        	<div class="container">
+            <div class="row">
+                <div class="col-xs-5 col-sm-2">
+                    <img class="logo img-responsive" src="./img/vennem-logo.svg">
+                </div>
+                <div class="col-xs-7 visible-xs">
+                    <h1 class="header-slogan">
+                        Segítünk aligazodni több mint <b class="brand-color">22.000</b> háztartási cukk között
+                    </h1>
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    <form action="">
+                        <div class="input-group">
+                            <span class="input-group-addon btn-default">
+                                <i class="vennem-icon vi-all-categories"></i>
+                            </span>
+                            <input id="search-field" type="text" class="form-control" placeholder="Mit keres?">
+                            <span class="input-group-addon btn-primary">
+                                <i class="vennem-icon vi-search"></i>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+            </div>
+			<div class="header-container-wrapper bottom white">
+        	<div class="container">
+            <div class="row">
+        		<div class="col-xs-12">
+                        <div class="category-header">
+                            <ul class="breadcrumb-list hidden-xs" style="padding-bottom: 0;">
+       							<li>Itt jár:</li>
+                                <li>
+                                    <a href="#">
+                                        Összes termék kategóriák
+                                        <i class="vennem-icon vi-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li>Kekszek és italok</li>
+                            </ul>
+							<h1 class="category-title">Kekszek és italok</h1>
+                            <div class="filter-container">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-default">Szűrések (X)</button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="text-right">
+                                            <ul class="dropdown-filter-list list-inline">
+                                                <li>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                                            <i class="vennem-icon vi-thumbnail-view"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                                            <li><a href="#"><i class="vennem-icon vi-list-order"></i>Relevancia</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-popular"></i>Népszerűek</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-price-desc"></i>Olcsók</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-price-asc"></i>Drágák</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-alphabet-asc"></i>Név</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                                                            <i class="vennem-icon vi-list-order"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                                                            <li><a href="#"><i class="vennem-icon vi-list-order"></i>Relevancia</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-popular"></i>Népszerűek</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-price-desc"></i>Olcsók</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-price-asc"></i>Drágák</a></li>
+                                                            <li><a href="#"><i class="vennem-icon vi-arrow-alphabet-asc"></i>Név</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+<!--         </div> -->
+    </header>
+    <main class="site-content">
+        <section class="result-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="result-list">
+							<li class="sale-item">
+                                <a href="#">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>            
+									<div class="media">
+										<div class="media-left">
+											<img class="media-object" src="http://placehold.it/65x65" alt="">
+										</div>
+										<div class="media-body">
+											<h2 class="media-heading">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+        	                                <h3 class="sale-info">Tesco Akció</h3>
+    	                                    <h4 class="item-price">219 Ft-tól</h4>
+	                                        <span class="item-offers">(1 ajánlat)</span>
+										</div>
+									</div>
+                                    <i class="vennem-icon vi-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="sale-item">
+                                <a href="#">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                        <h3 class="sale-info">Tesco Akció</h3>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                    <i class="vennem-icon vi-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="sale-item">
+                                <a href="">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                        <h3 class="sale-info">Tesco Akció</h3>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                    <i class="vennem-icon vi-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                    <i class="vennem-icon vi-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás extrudált kenyér 100g</h2>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                    <i class="vennem-icon vi-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="result-pager">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        &lt;
+                                    </a>
+                                </li>
+                                <li><a href="#">3</a></li>
+                                <li class="active"><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        &gt;
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pager-info">1-24 termék - 4/12 oldal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="result-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="result-list grid-style">
+                            <li class="sale-item">
+                                <a href="">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás... 100g</h2>
+                                        <h3 class="sale-info">Tesco Akció</h3>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sale-item">
+                                <a href="">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás... 100g</h2>
+                                        <h3 class="sale-info">Tesco Akció</h3>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sale-item">
+                                <a href="">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás... 100g</h2>
+                                        <h3 class="sale-info">Tesco Akció</h3>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="sale-item">
+                                <a href="">
+                                    <div class="sale-label">
+                                        10%
+                                    </div>
+                                    <img src="http://placehold.it/65x65" />
+                                    <div class="rl-item-desctiption">
+                                        <h2 class="item-title">Abonett BIO kukoricás... 100g</h2>
+                                        <h3 class="sale-info">Tesco Akció</h3>
+                                        <h4 class="item-price">219 Ft-tól</h4>
+                                        <span class="item-offers">(1 ajánlat)</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="result-pager">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        &lt;
+                                    </a>
+                                </li>
+                                <li><a href="#">3</a></li>
+                                <li class="active"><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        &gt;
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pager-info">1-30 termék - 4/12 oldal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="footer-title">Kedves Látogatink!</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                        <a class="footer-more-info" href="#">A termékadatokról bővebben...</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="footer-menu">
+                        <ul class="footer-menu-list list-inline">
+                            <li>
+                                <a href="#">Adatvédelem</a>
+                            </li>
+                            <li>
+                                <a href="#">Jogi nyilatkozat</a>
+                            </li>
+                            <li>
+                                <a href="#">Kapcsolat</a>
+                            </li>
+                        </ul>
+                        2017 Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="" class="full-screen-link">
+                        <i class="vennem-icon vi-desktop-view"></i> Váltson asztali nézetre!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Test Section-->
+    <div class="res-test res-xs">XS RES<span class="high-pixel-density xs-hpd">- XS HPD</span></div>
+    <div class="res-test res-sm">SM RES<span class="high-pixel-density sm-hpd">- SM HPD</span></div>
+    <div class="res-test res-md">MD RES<span class="high-pixel-density md-hpd">- MD HPD</span></div>
+    <div class="res-test res-lg">LG RES<span class="high-pixel-density lg-hpd">- LG HPD</span></div>
+    <!--End Test Section-->
+
+    <!--Page specific Vendor scripts-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+            <!--Page specific scripts-->
+            <script src="/js/app.js"></script>
+</body>
+
+</html>
